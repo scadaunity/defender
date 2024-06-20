@@ -1,6 +1,6 @@
 {
-    "name": "scadaunity/framework",
-    "description": "Micro PHP Framework",
+    "name": "scadaunity/defender",
+    "description": "Sistema de segurança usina fotovoltaica",
     "type": "project",
     "license": "MIT",
     "authors": [

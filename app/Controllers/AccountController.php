@@ -3,14 +3,9 @@
 namespace App\Controllers;
 
 use ScadaUnity\Http\Request;
-use ScadaUnity\Suport\Auth;
 
-class MoneyAccountController
+class AccountController
 {
-    public function __construct(){
-        return Auth::check() === false ? redirectWithFlash('/login','notLogged','Area restrita faça o login') : '';
-    }
-
   /**
    * Metodo responsavel por listar todos os registros.
    *
@@ -18,10 +13,7 @@ class MoneyAccountController
    */
   public function index()
   {
-      $props = [
-          'title'=>'Contas',
-      ];
-      view('pages/money/accounts',$props);
+    //
   }
 
   /**
@@ -37,33 +29,32 @@ class MoneyAccountController
   /**
    * Metodo responsavel por inserir um novo registro no banco de dados.
    *
-   * @param \ScadaUnity\Framework\Http\Request $request
-   * @param \App\Models\MoneyAccount $moneyaccount
-   * @return \ScadaUnity\Framework\Http\Response
+   * @param \ScadaUnity\Http\Request $request
+   * @param \App\Models\Account $account
+   * @return \ScadaUnity\Http\Response
    */
-  public function store()
+  public function store(Request $request, $account)
   {
-    $request = new Request();
-    dd($request->post());
+    //
   }
 
   /**
    * Metodo responsavel por exibir um registro especifico.
    *
-   * @param \App\Models\MoneyAccount
+   * @param \App\Models\Account
    * @return \ScadaUnity\Http\Response
    */
-  public function show(MoneyAccount $moneyaccount)
+  public function show($account)
   {
     //
   }
   /**
    * Metodo responsavel por exibir o formulario de edição de um registro.
    *
-   * @param \App\Models\MoneyAccount
+   * @param \App\Models\Account
    * @return \ScadaUnity\Http\Response
    */
-  public function edit(MoneyAccount $moneyaccount)
+  public function edit($account)
   {
     //
   }
@@ -71,20 +62,20 @@ class MoneyAccountController
    * Metodo responsavel por alterar um registro.
    *
    * @param \ScadaUnity\Http\Request $request
-   * @param \App\Models\MoneyAccount $moneyaccount
+   * @param \App\Models\Account $account
    * @return \ScadaUnity\Http\Response
    */
-  public function update(Request $request, MoneyAccount $moneyaccount)
+  public function update(Request $request, $account)
   {
     //
   }
   /**
    * Metodo responsavel por excluir um registro.
    *
-   * @param \App\Models\MoneyAccount
+   * @param \App\Models\Account
    * @return \ScadaUnity\Http\Response
    */
-  public function destroy(MoneyAccount $moneyaccount)
+  public function destroy($account)
   {
     //
   }

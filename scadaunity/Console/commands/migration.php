@@ -5,12 +5,12 @@ use ScadaUnity\Database\Migration;
 
 if ($argv[1] == 'create:migration') {
     logo();
-  echo "    # Criando migration #".PHP_EOL;
+  echo "# Criando migration #" . PHP_EOL . PHP_EOL;
 
   // Verifica se foi passado o nome da migration
   if (!isset($argv[2])) {
-    echo "Informe o nome do controller".PHP_EOL;
-    die('Não foi passado o nome do controller no segundo parametro.'.PHP_EOL);
+    echo "\e[31mErro:\033[0m   Informe o nome da migration como no exemplo abaixo". PHP_EOL . PHP_EOL;
+    die('php cli create:migration create_products_table'. PHP_EOL . PHP_EOL);
   }
 
   //Cria o nome do arquivo
@@ -20,6 +20,7 @@ if ($argv[1] == 'create:migration') {
   //Adiciona o caminho completo do arquivo
   $file = ROOT.'/app/Database/Migrations/'.$name.'.php';
   
+
 
   // Verifica se o arquivo existe
   if (is_file($file)) {
@@ -69,13 +70,13 @@ if ($argv[1] == 'create:migration') {
 if ($argv[1] == 'migrate') {
   logo();
   echo "#  Migrando banco de dados  #".PHP_EOL.PHP_EOL;
-  $migrator = new Migration();
-  $migrator->migrate();
+  $migration = new Migration();
+  $migration->migrate();
 }
 
 if ($argv[1] == 'migrate:rollback') {
   logo();
   echo "#  Migrando banco de dados  #".PHP_EOL.PHP_EOL;
-  $migrator = new Migration();
-  $migrator->rollback();
+  $migration = new Migration();
+  $migration->rollback();
 }

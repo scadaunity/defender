@@ -149,4 +149,21 @@ class Schema extends Table
     private function execute(){
 
     }
+
+    /**
+     * Verifica se existe a tabela
+     * @param string $table
+     * @return bool
+     */
+    public static function hasTable(string $name)
+    {
+      $tables = self::all();
+      foreach ($tables as $table) {
+        if($table == $name){
+          return true;
+        }
+        return false;
+      }
+
+    }
 }
